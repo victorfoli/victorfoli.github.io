@@ -19,7 +19,8 @@ const translations = {
       label: '01/',
       title: 'Sobre mim',
       skillsLabel: 'Stack',
-      bio: 'Estudante de Engenharia de Dados pela UFV, apaixonado por construir pipelines robustos e extrair valor de dados em escala. Trabalho com Python, SQL e ferramentas modernas do ecossistema de dados para transformar dados brutos em insights acionáveis.'
+      bio1: 'Analista de Sistemas e graduando em Sistemas de Informação pela Universidade Federal de Viçosa (UFV), com trajetória construída na interseção entre infraestrutura de TI e engenharia de dados. Ao longo da minha experiência em ambientes corporativos, atuei com administração de sistemas, automação de processos e desenvolvimento de relatórios gerenciais — o que me deu uma visão end-to-end de como dados fluem e sustentam decisões nas organizações.',
+      bio2: 'Hoje meu foco está em construir arquiteturas de dados modernas e confiáveis: pipelines ETL/ELT, modelagem, observabilidade e integração de sistemas em ambientes cloud. Combino sólida base técnica em Python, SQL e ferramentas do ecossistema de dados com a mentalidade de quem já operou a infraestrutura que sustenta esses sistemas — e sabe o que significa construir algo que funciona de verdade em produção.'
     },
     projects: {
       label: '02/',
@@ -64,7 +65,8 @@ const translations = {
       label: '01/',
       title: 'About me',
       skillsLabel: 'Stack',
-      bio: 'Data Engineering student at UFV, passionate about building robust pipelines and extracting value from data at scale. I work with Python, SQL, and modern data ecosystem tools to transform raw data into actionable insights.'
+      bio1: 'Systems Analyst and Information Systems undergraduate at the Federal University of Viçosa (UFV), with a background built at the intersection of IT infrastructure and data engineering. Through my experience in corporate environments, I have worked with systems administration, process automation, and managerial reporting — giving me an end-to-end perspective on how data flows and drives decisions across organizations.',
+      bio2: 'My current focus is on building modern, reliable data architectures: ETL/ELT pipelines, data modeling, observability, and systems integration in cloud environments. I combine a solid technical foundation in Python, SQL, and data ecosystem tools with the mindset of someone who has operated the infrastructure that underpins these systems — and knows what it means to build something that truly works in production.'
     },
     projects: {
       label: '02/',

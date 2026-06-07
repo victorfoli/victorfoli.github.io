@@ -231,7 +231,7 @@ button { cursor: none; background: none; border: none; font: inherit; }
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(5, 10, 5, 0.62);
+  background: rgba(5, 10, 5, 0.74);
   backdrop-filter: blur(0.5px);
   -webkit-backdrop-filter: blur(1px);
   pointer-events: none;
@@ -445,11 +445,12 @@ section, footer {
 }
 
 .about-text p {
-  font-size: 1.05rem;
+  font-size: 0.96rem;
   color: var(--text);
   line-height: 1.85;
   opacity: 0.8;
   max-width: 52ch;
+  margin-bottom: 1.0rem;
 }
 
 .skills-label {
