@@ -440,17 +440,21 @@ function initRouter() {
 
 function updateRoute() {
   const sections = ['hero', 'about', 'projects', 'contact'];
+  const scrollPos = window.scrollY + window.innerHeight * 0.5;
   let current = 'portfolio';
+  let closestDist = Infinity;
 
   for (const id of sections) {
     const el = document.getElementById(id);
     if (!el) continue;
 
     const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      if (rect.top <= window.innerHeight * 0.4) {
-        current = SECTION_TO_ROUTE[id];
-      }
+    const sectionTop = window.scrollY + rect.top;
+    const dist = Math.abs(scrollPos - sectionTop);
+
+    if (dist < closestDist) {
+      closestDist = dist;
+      current = SECTION_TO_ROUTE[id];
     }
   }
 
