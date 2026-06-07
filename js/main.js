@@ -382,10 +382,15 @@ function initReveal() {
 function initSmoothNav() {
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
-      const target = document.querySelector(link.getAttribute('href'));
+      const href = link.getAttribute('href');
+      const target = document.querySelector(href);
       if (!target) return;
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth' });
+
+      const sectionId = href.slice(1);
+      const route = SECTION_TO_ROUTE[sectionId] || sectionId;
+      history.replaceState(null, '', '#' + route);
     });
   });
 }
@@ -404,9 +409,55 @@ function initLangToggle() {
 }
 
 /* =====================================================
+   HASH ROUTING
+   ===================================================== */
+const ROUTE_TO_SECTION = {
+  portfolio: 'hero',
+  about:    'about',
+  projects: 'projects',
+  contact:  'contact'
+};
+
+const SECTION_TO_ROUTE = {
+  hero:     'portfolio',
+  about:    'about',
+  projects: 'projects',
+  contact:  'contact'
+};
+
+function initRouter() {
+  const hash = location.hash.replace('#', '');
+  const sectionId = ROUTE_TO_SECTION[hash] || 'hero';
+
+  if (hash && ROUTE_TO_SECTION[hash]) {
+    setTimeout(() => {
+      document.getElementById(sectionId)?.scrollIntoView();
+    }, 80);
+  } else {
+    history.replaceState(null, '', '#portfolio');
+  }
+}
+
+function updateRoute() {
+  const sections = ['hero', 'about', 'projects', 'contact'];
+  const threshold = window.innerHeight * 0.45;
+  let current = 'portfolio';
+
+  for (const id of sections) {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= threshold) {
+      current = SECTION_TO_ROUTE[id];
+    }
+  }
+
+  history.replaceState(null, '', '#' + current);
+}
+
+/* =====================================================
    INICIALIZAÇÃO
    ===================================================== */
 document.addEventListener('DOMContentLoaded', () => {
+  initRouter();
   initCursor();
   initMatrix();
   initNavbar();
@@ -415,6 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   initSmoothNav();
   initLangToggle();
+  window.addEventListener('scroll', updateRoute, { passive: true });
 
   /* Aplica idioma inicial (sem animação de fade) */
   const initLang = detectInitialLang();
