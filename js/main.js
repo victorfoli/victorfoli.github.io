@@ -440,17 +440,23 @@ function initRouter() {
 
 function updateRoute() {
   const sections = ['hero', 'about', 'projects', 'contact'];
-  const threshold = window.innerHeight * 0.45;
   let current = 'portfolio';
 
   for (const id of sections) {
     const el = document.getElementById(id);
-    if (el && el.getBoundingClientRect().top <= threshold) {
-      current = SECTION_TO_ROUTE[id];
+    if (!el) continue;
+
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      if (rect.top <= window.innerHeight * 0.4) {
+        current = SECTION_TO_ROUTE[id];
+      }
     }
   }
 
-  history.replaceState(null, '', '#' + current);
+  if (location.hash !== '#' + current) {
+    history.replaceState(null, '', '#' + current);
+  }
 }
 
 /* =====================================================
