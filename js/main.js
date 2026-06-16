@@ -26,8 +26,8 @@ const translations = {
       label: '02/',
       title: 'Projetos',
       p1: {
-        title: 'Pipeline de Ingestão de Dados',
-        desc: 'Pipeline batch para ingestão e transformação de dados de e-commerce usando Python, Airflow e AWS S3.',
+        title: 'ETL de Indicadores Econômicos (BCB)',
+        desc: 'Pipeline ETL que extrai séries do Banco Central (Dólar, Selic, IPCA), consolida com Pandas e persiste em PostgreSQL e Parquet.',
         type: 'Engenharia de Dados'
       },
       p2: {
@@ -72,8 +72,8 @@ const translations = {
       label: '02/',
       title: 'Projects',
       p1: {
-        title: 'Data Ingestion Pipeline',
-        desc: 'Batch pipeline for ingestion and transformation of e-commerce data using Python, Airflow, and AWS S3.',
+        title: 'Economic Indicators ETL (BCB)',
+        desc: 'ETL pipeline that extracts series from the Central Bank of Brazil (USD, Selic, IPCA), consolidates with Pandas, and persists to PostgreSQL and Parquet.',
         type: 'Data Engineering'
       },
       p2: {
