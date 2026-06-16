@@ -112,4 +112,4 @@ Acesse / Visit: `http://localhost:8080`
 
 - GitHub: [@victorfoli](https://github.com/victorfoli)
 - LinkedIn: [victoroliveira2001](https://www.linkedin.com/in/victoroliveira2001/)
-- Email: victor.f.oliveira@ufv.br
+- Email: victorrrrfelipe@hotmail.com
